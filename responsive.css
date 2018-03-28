@@ -1,0 +1,184 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__menu {
+  display: none;
+}
+
+.hero, .top-news, .scores, .weather, .recent-news {
+  order: 10;
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .header__logo {
+    height: 48px;
+    margin-right: 0.5em;
+  }
+  .header__title {
+    margin-left: 0;
+    font-size: 2em;
+    vertical-align: bottom;
+  }
+  .nav {
+    z-index: 10;
+    background-color: #fff;
+    width: 300px;
+    position: absolute;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+  .nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  .nav__item {
+    display: list-item;
+    border-bottom: 1px solid #E0E0E0;
+    width: 100%;
+    text-align: left;
+  }
+  .header__menu {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding: 1em;
+  }
+  .header__menu svg {
+    width: 32px;
+    fill: #E0E0E0;
+  }
+  .scores__table {
+    display: block;
+    color: #000;
+  }
+  .scores__table th {
+    color: #000;
+    font-weight: 500;
+  }
+  .scores__table td, th {
+    border-color: #444;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    display: inline;
+    float: left;
+  }
+  .scores__table td:last-child, th:last-child {
+      border-right: none;
+  }
+  .scores__table th {
+    /* background: transparent; */
+    font-size: 1.2em;
+  }
+  .scores__table tr {
+    display: block;
+    float: left;
+    clear: left;
+    padding: 6px 0;
+    width: 100%;
+  }
+  .scores__table thead {
+    border-bottom: 2px solid #444;
+    margin: 0 0 0.3em 0;
+    padding: 0 0 0.2em 0;
+  }
+  .scores__table tbody td:nth-child(6n+1), th:nth-child(6n+1) {
+    background: #FFD8D8;
+  }
+  .scores__table tbody td:nth-child(6n+2), th:nth-child(6n+2) {
+    background: #C07D9C;
+  }
+  .scores__table tbody td:nth-child(6n+3), th:nth-child(6n+3) {
+    background: #F9DDE1;
+  }
+  .scores__table tbody td:nth-child(6n+4) {
+    background: #DFEDEF;
+  }
+  .scores__table th:nth-child(6n+4) {
+    background: linear-gradient(to right, #DFEDEF, #9DBAB3)
+  }
+  .scores__table tbody td:nth-child(6n+5) {
+    background: #9DBAB3;
+  }
+  .scores__table tbody td:nth-child(6n+6), th:nth-child(6n+5) {
+    background: #746C6A;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .hero {
+    order: 0;
+    width: 60%;
+  }
+  .weather {
+    order: 1;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .recent-news {
+    font-size: 16px;
+    line-height: 1.1em;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    font-size: 16px;
+    line-height: 1.2em;
+  }
+  .hero {
+    width: 50%;
+  }
+  .hero article {
+    height: 50%;
+  }
+  .top-news {
+    font-size: 14px;
+    order: 1;
+    width: 50%;
+  }
+  .scores {
+    order: 2;
+    width: 60%;
+    font-size: 14px;
+  }
+  .scores__table th,
+  .scores__table td {
+    padding: 1em 0.5em 1em 0.5em;
+  }
+  .weather {
+    order: 3;
+    width: 40%;
+    font-size: 14px;
+  }
+  .recent-news {
+    max-width: 700px;
+  }
+  .snippet__thumbnail {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  main, .header__inner, .nav, .content {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .scores__table th,
+  .scores__table td {
+    padding: 1em;
+  }
+}
